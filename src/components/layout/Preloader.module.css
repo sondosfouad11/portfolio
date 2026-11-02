@@ -1,0 +1,25 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: var(--bg-2);
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 18px;
+}
+.name {
+  display: flex;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 8vw, 5.5rem);
+  letter-spacing: -0.03em;
+  padding-bottom: 0.1em;
+}
+.count {
+  font-variant-numeric: tabular-nums;
+  color: var(--accent-text);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}

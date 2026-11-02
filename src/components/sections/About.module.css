@@ -1,0 +1,127 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 280px) 1fr;
+  gap: clamp(32px, 6vw, 96px);
+}
+.indexCol {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+.index {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.index li {
+  border-bottom: 1px solid var(--line);
+}
+.index button {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  width: 100%;
+  padding: 14px 0;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  transition: color 0.3s, padding-left 0.4s var(--ease);
+}
+.index button span {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--accent-text);
+  letter-spacing: 0.1em;
+}
+.index button:hover {
+  color: var(--text);
+  padding-left: 12px;
+}
+
+.heading {
+  margin: 14px 0 28px;
+  font-size: clamp(2rem, 4.6vw, 4.2rem);
+  line-height: 1.04;
+  max-width: 16ch;
+}
+.bio {
+  display: grid;
+  gap: 16px;
+  max-width: 58ch;
+  color: var(--text-dim);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+}
+
+.hats {
+  margin-top: clamp(32px, 5vw, 60px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.hat {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  text-align: left;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: transform 0.5s var(--ease), opacity 0.4s, background-color 0.4s, color 0.4s, border-color 0.4s;
+}
+.hat h3 {
+  font-size: 1.4rem;
+}
+.hat p {
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  transition: color 0.4s;
+}
+.on {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+  transform: translateY(-6px);
+}
+.on svg {
+  color: var(--accent-text);
+}
+.off {
+  opacity: 0.5;
+}
+
+.facts {
+  margin-top: clamp(32px, 5vw, 56px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.facts dd {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  letter-spacing: -0.02em;
+}
+.facts dt {
+  order: 2;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.facts div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .indexCol {
+    position: static;
+  }
+  .hats {
+    grid-template-columns: 1fr;
+  }
+}

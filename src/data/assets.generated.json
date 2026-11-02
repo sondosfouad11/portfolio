@@ -1,0 +1,158 @@
+{
+  "bank-ui": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/bank-ui/cover-808.webp",
+      "srcset": "/projects/bank-ui/cover-360.webp 360w, /projects/bank-ui/cover-640.webp 640w, /projects/bank-ui/cover-808.webp 808w"
+    }
+  },
+  "bsl": {
+    "cover": {
+      "width": 1616,
+      "height": 1264,
+      "src": "/projects/bsl/cover-1616.webp",
+      "srcset": "/projects/bsl/cover-360.webp 360w, /projects/bsl/cover-640.webp 640w, /projects/bsl/cover-960.webp 960w, /projects/bsl/cover-1440.webp 1440w, /projects/bsl/cover-1616.webp 1616w"
+    }
+  },
+  "crm-dashboard": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/crm-dashboard/cover-808.webp",
+      "srcset": "/projects/crm-dashboard/cover-360.webp 360w, /projects/crm-dashboard/cover-640.webp 640w, /projects/crm-dashboard/cover-808.webp 808w"
+    }
+  },
+  "explore-hub": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/explore-hub/cover-808.webp",
+      "srcset": "/projects/explore-hub/cover-360.webp 360w, /projects/explore-hub/cover-640.webp 640w, /projects/explore-hub/cover-808.webp 808w"
+    }
+  },
+  "flight-scheduling": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/flight-scheduling/cover-808.webp",
+      "srcset": "/projects/flight-scheduling/cover-360.webp 360w, /projects/flight-scheduling/cover-640.webp 640w, /projects/flight-scheduling/cover-808.webp 808w"
+    }
+  },
+  "gaming-ui": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/gaming-ui/cover-808.webp",
+      "srcset": "/projects/gaming-ui/cover-360.webp 360w, /projects/gaming-ui/cover-640.webp 640w, /projects/gaming-ui/cover-808.webp 808w"
+    }
+  },
+  "glowcare": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/glowcare/cover-808.webp",
+      "srcset": "/projects/glowcare/cover-360.webp 360w, /projects/glowcare/cover-640.webp 640w, /projects/glowcare/cover-808.webp 808w"
+    }
+  },
+  "gofit": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/gofit/cover-808.webp",
+      "srcset": "/projects/gofit/cover-360.webp 360w, /projects/gofit/cover-640.webp 640w, /projects/gofit/cover-808.webp 808w"
+    }
+  },
+  "highlife": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/highlife/cover-808.webp",
+      "srcset": "/projects/highlife/cover-360.webp 360w, /projects/highlife/cover-640.webp 640w, /projects/highlife/cover-808.webp 808w"
+    }
+  },
+  "lumiere-clinic": {
+    "cover": {
+      "width": 1440,
+      "height": 1126,
+      "src": "/projects/lumiere-clinic/cover-1440.webp",
+      "srcset": "/projects/lumiere-clinic/cover-360.webp 360w, /projects/lumiere-clinic/cover-640.webp 640w, /projects/lumiere-clinic/cover-960.webp 960w, /projects/lumiere-clinic/cover-1440.webp 1440w"
+    },
+    "screen-1": {
+      "width": 1440,
+      "height": 900,
+      "src": "/projects/lumiere-clinic/screen-1-1440.webp",
+      "srcset": "/projects/lumiere-clinic/screen-1-360.webp 360w, /projects/lumiere-clinic/screen-1-640.webp 640w, /projects/lumiere-clinic/screen-1-960.webp 960w, /projects/lumiere-clinic/screen-1-1440.webp 1440w"
+    },
+    "screen-2": {
+      "width": 1440,
+      "height": 900,
+      "src": "/projects/lumiere-clinic/screen-2-1440.webp",
+      "srcset": "/projects/lumiere-clinic/screen-2-360.webp 360w, /projects/lumiere-clinic/screen-2-640.webp 640w, /projects/lumiere-clinic/screen-2-960.webp 960w, /projects/lumiere-clinic/screen-2-1440.webp 1440w"
+    }
+  },
+  "profile": {
+    "portrait": {
+      "width": 1200,
+      "height": 1500,
+      "src": "/projects/profile/portrait-1200.webp",
+      "srcset": "/projects/profile/portrait-360.webp 360w, /projects/profile/portrait-640.webp 640w, /projects/profile/portrait-960.webp 960w, /projects/profile/portrait-1200.webp 1200w"
+    }
+  },
+  "schooltrack": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/schooltrack/cover-808.webp",
+      "srcset": "/projects/schooltrack/cover-360.webp 360w, /projects/schooltrack/cover-640.webp 640w, /projects/schooltrack/cover-808.webp 808w"
+    }
+  },
+  "social-media-app": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/social-media-app/cover-808.webp",
+      "srcset": "/projects/social-media-app/cover-360.webp 360w, /projects/social-media-app/cover-640.webp 640w, /projects/social-media-app/cover-808.webp 808w"
+    }
+  },
+  "velora-estates": {
+    "cover": {
+      "width": 714,
+      "height": 559,
+      "src": "/projects/velora-estates/cover-714.webp",
+      "srcset": "/projects/velora-estates/cover-360.webp 360w, /projects/velora-estates/cover-640.webp 640w, /projects/velora-estates/cover-714.webp 714w"
+    },
+    "screen-0": {
+      "width": 1440,
+      "height": 1126,
+      "src": "/projects/velora-estates/screen-0-1440.webp",
+      "srcset": "/projects/velora-estates/screen-0-360.webp 360w, /projects/velora-estates/screen-0-640.webp 640w, /projects/velora-estates/screen-0-960.webp 960w, /projects/velora-estates/screen-0-1440.webp 1440w"
+    },
+    "screen-1": {
+      "width": 1440,
+      "height": 900,
+      "src": "/projects/velora-estates/screen-1-1440.webp",
+      "srcset": "/projects/velora-estates/screen-1-360.webp 360w, /projects/velora-estates/screen-1-640.webp 640w, /projects/velora-estates/screen-1-960.webp 960w, /projects/velora-estates/screen-1-1440.webp 1440w"
+    },
+    "screen-2": {
+      "width": 1440,
+      "height": 900,
+      "src": "/projects/velora-estates/screen-2-1440.webp",
+      "srcset": "/projects/velora-estates/screen-2-360.webp 360w, /projects/velora-estates/screen-2-640.webp 640w, /projects/velora-estates/screen-2-960.webp 960w, /projects/velora-estates/screen-2-1440.webp 1440w"
+    },
+    "screen-3": {
+      "width": 1500,
+      "height": 595,
+      "src": "/projects/velora-estates/screen-3-1500.webp",
+      "srcset": "/projects/velora-estates/screen-3-360.webp 360w, /projects/velora-estates/screen-3-640.webp 640w, /projects/velora-estates/screen-3-960.webp 960w, /projects/velora-estates/screen-3-1440.webp 1440w, /projects/velora-estates/screen-3-1500.webp 1500w"
+    }
+  },
+  "wafid": {
+    "cover": {
+      "width": 808,
+      "height": 632,
+      "src": "/projects/wafid/cover-808.webp",
+      "srcset": "/projects/wafid/cover-360.webp 360w, /projects/wafid/cover-640.webp 640w, /projects/wafid/cover-808.webp 808w"
+    }
+  }
+}

@@ -1,0 +1,427 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding: 110px 0 56px;
+  overflow: clip;
+  isolation: isolate;
+}
+/* Soft background glows behind the photo side, fading into the page colour.
+   They drift very slowly so the hero feels alive without pulling the eye. */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  /* no blur filter: the radial gradient is already soft, and a big blur is very costly to paint on phones */
+  pointer-events: none;
+}
+.hero::before {
+  width: min(70vw, 900px);
+  aspect-ratio: 1;
+  right: -18vw;
+  top: -10vw;
+  background: radial-gradient(circle, var(--glow-1), transparent 68%);
+  animation: glowDrift 22s ease-in-out infinite alternate;
+}
+.hero::after {
+  width: min(50vw, 640px);
+  aspect-ratio: 1;
+  right: 22vw;
+  /* kept well inside the hero: the hero clips its overflow, and a clipped glow shows a hard edge */
+  bottom: 12%;
+  background: radial-gradient(circle, var(--glow-2), transparent 68%);
+  animation: glowDrift 28s ease-in-out infinite alternate-reverse;
+}
+@keyframes glowDrift {
+  to {
+    transform: translate(-4vw, 3vw) scale(1.08);
+  }
+}
+@media (max-width: 860px) {
+  .hero::before {
+    width: 120vw;
+    right: -50vw;
+    top: 30vh;
+  }
+  .hero::after {
+    width: 90vw;
+    right: 20vw;
+    bottom: auto;
+    top: -20vw;
+  }
+}
+
+/* Pause every looping animation in the hero while it is off screen */
+.hero[data-paused] *,
+.hero[data-paused]::before,
+.hero[data-paused]::after {
+  animation-play-state: paused !important;
+}
+
+/* Floating shapes: small, quiet accents that bob and follow the mouse at different depths */
+.shapes {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.shapes > span {
+  position: absolute;
+  display: block;
+  will-change: transform;
+}
+.shapeStar {
+  width: clamp(22px, 2.6vw, 38px);
+  left: 46%;
+  top: 22%;
+}
+.shapeStar svg {
+  fill: var(--accent-text);
+  opacity: 0.55;
+  animation: spin 26s linear infinite;
+}
+.shapeRing {
+  width: clamp(48px, 5.5vw, 84px);
+  aspect-ratio: 1;
+  left: 53%;
+  top: 70%;
+  border: 1.5px solid var(--accent-line);
+  border-radius: 50%;
+  animation: bob 8s ease-in-out infinite alternate;
+}
+.shapePill {
+  width: clamp(54px, 6vw, 92px);
+  height: clamp(18px, 2vw, 30px);
+  right: 30%;
+  top: 14%;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--accent-soft);
+  rotate: -16deg;
+  animation: bob 10s ease-in-out infinite alternate-reverse;
+}
+.shapeDot {
+  width: 10px;
+  aspect-ratio: 1;
+  right: 6%;
+  bottom: 18%;
+  border-radius: 50%;
+  background: var(--accent-text);
+  opacity: 0.6;
+  animation: bob 6s ease-in-out infinite alternate;
+}
+/* Headline lines rise out of these masks on load */
+.masked {
+  overflow: clip;
+  /* Room around the text inside the clipping mask. Without the side room, a line that is as wide as its text
+     (the centred lines on phones) clips the edge of its first and last letter. The negative margins cancel
+     it out, so nothing moves. */
+  padding: 0.04em 0.14em 0.08em;
+  margin: -0.04em -0.14em -0.08em;
+}
+
+/* Desktop: headline on the left, photo on the right, intro under the headline */
+.inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.75fr);
+  grid-template-areas:
+    'status status'
+    'title  photo'
+    'bottom photo'
+    'cue    cue';
+  column-gap: clamp(28px, 5vw, 80px);
+  align-items: center;
+}
+
+.status {
+  grid-area: status;
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: clamp(18px, 2.6vw, 30px);
+}
+.status i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-3);
+  box-shadow: 0 0 0 0 var(--accent-3);
+  animation: pulse 2.2s infinite;
+}
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.title {
+  grid-area: title;
+  display: grid;
+  /* Alexandria (an Egyptian-designed face) set heavy and tight. Sized so EXPERIENCES fits the column */
+  font-weight: 800;
+  font-size: clamp(2.2rem, 5.6vw, 5.2rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+}
+.line {
+  display: block;
+  will-change: transform;
+}
+.lineIn {
+  display: block;
+}
+.designLine {
+  position: relative;
+  width: fit-content;
+  text-transform: none;
+  margin: -0.06em 0 0.04em 0.9em;
+}
+.designLine :global(.serif) {
+  font-size: 1.4em;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+.scribble {
+  position: absolute;
+  left: 0;
+  right: -4%;
+  bottom: -0.02em;
+  width: 104%;
+  height: 0.28em;
+  overflow: visible;
+}
+.scribble path {
+  fill: none;
+  stroke: var(--accent-display);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.char {
+  display: inline-block;
+  transition: transform 0.35s var(--ease), color 0.25s;
+}
+.char:hover {
+  transform: translateY(-0.1em) rotate(-4deg);
+  color: var(--accent-text);
+}
+
+/* Photo: plain black-and-white portrait on a solid accent block, like a printed card */
+.photoCol {
+  grid-area: photo;
+  justify-self: end;
+  width: min(100%, 360px);
+}
+.photoFrame {
+  position: relative;
+}
+.block {
+  position: absolute;
+  inset: 0;
+  translate: 14px 14px;
+  border-radius: 180px 180px var(--radius) var(--radius);
+  background: var(--accent-fill);
+  opacity: 0.85;
+}
+.photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 180px 180px var(--radius) var(--radius);
+  background: var(--surface);
+  transition: transform 0.5s var(--ease);
+}
+.photo:hover {
+  transform: translate(-4px, -4px) rotate(-1.5deg);
+}
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.06);
+}
+.noPhoto {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+/* Rotating stamp: solid background so its text stays readable in both themes */
+.stamp {
+  position: absolute;
+  left: -14%;
+  bottom: 9%;
+  width: clamp(92px, 8.5vw, 124px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--text);
+  color: var(--bg);
+  box-shadow: var(--shadow);
+}
+.stamp svg {
+  position: absolute;
+  inset: 0;
+  animation: spin 18s linear infinite;
+}
+.stamp text {
+  fill: currentColor;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+}
+.stamp span {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--accent-text);
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.caption {
+  margin-top: 26px;
+  text-align: right;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.bottom {
+  grid-area: bottom;
+  display: grid;
+  justify-items: start;
+  gap: 24px;
+  margin-top: clamp(24px, 3vw, 40px);
+}
+.intro {
+  max-width: 50ch;
+  color: var(--text-dim);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+}
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cue {
+  grid-area: cue;
+  justify-self: center;
+  margin-top: 36px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  animation: bob 1.6s ease-in-out infinite alternate;
+}
+@keyframes bob {
+  to {
+    translate: 0 -8px;
+  }
+}
+
+/* Tablet and phone: one column, everything centred. The words come first (status, headline, intro,
+   buttons) so they fit the first screen; the photo follows and peeks in at the bottom edge. */
+@media (max-width: 860px) {
+  .hero {
+    padding-top: 96px;
+    padding-bottom: 40px;
+  }
+  /* No floating shapes on phones: with centred text they would sit on top of the words. The selector is
+     '.shapes > span' on purpose, because '.shapes > span' (display: block) beats a plain class. */
+  .shapes > span {
+    display: none;
+  }
+  .inner {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      'status'
+      'title'
+      'bottom'
+      'photo'
+      'cue';
+    justify-items: center;
+    text-align: center;
+  }
+  .status {
+    justify-self: center;
+    margin-bottom: 18px;
+  }
+  /* Sized so the longest word (EXPERIENCES) fills the width of the screen, with a small margin */
+  .title {
+    width: 100%;
+    justify-items: center;
+    text-align: center;
+    font-size: clamp(1.8rem, 12.4vw, 5.4rem);
+    line-height: 0.92;
+    text-wrap: balance;
+  }
+  .line,
+  .lineIn {
+    text-align: center;
+  }
+  /* the serif word is centred too (on desktop it is indented to the right) */
+  .designLine {
+    margin-inline: auto;
+  }
+  .bottom {
+    justify-items: center;
+    margin-top: 22px;
+    gap: 20px;
+  }
+  .intro {
+    max-width: 32ch;
+    margin-inline: auto;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+  .ctas {
+    justify-content: center;
+  }
+  .photoCol {
+    justify-self: center;
+    width: min(64vw, 300px);
+    margin-top: 44px;
+  }
+  .caption {
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+  .stamp {
+    left: -18%;
+    width: 88px;
+  }
+  .cue {
+    display: none;
+  }
+}

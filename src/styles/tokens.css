@@ -1,0 +1,75 @@
+/* Design tokens. Change colors here and the whole site follows.
+   Palette: neutral black / off-white with deep reds that fade into black (taken from the reference).
+   --accent is the calm red for buttons and small marks; --accent-text is for small red text; --accent-soft is a faint tint
+   for large highlighted areas (no big solid red blocks); --accent-fill is only the soft backing behind the photo. */
+:root,
+:root[data-theme='dark'] {
+  /* colours sampled from the reference: neutral black, deep reds that fade into it */
+  --bg: #080808;
+  --bg-2: #0e0e0e;
+  --surface: #151414;
+  --line: rgb(230 228 231 / 0.1);
+  --text: #e6e4e7;
+  --text-dim: #9a9799;
+  --accent: #8f1d22; /* calm deep red, only for buttons and small marks */
+  --accent-hover: #a2262b;
+  --accent-text: #d4686c; /* soft red for small text, readable on black */
+  --accent-display: #c4474c; /* large type */
+  --accent-soft: rgb(182 15 23 / 0.09); /* faint tint for large highlighted areas */
+  --accent-line: rgb(212 104 108 / 0.35);
+  --accent-ink: #ffffff;
+  /* large red areas fade like the reference: bright red top-left, wine in the middle, almost black at the end */
+  --accent-fill: linear-gradient(150deg, #7d1a1f 0%, #4a1214 55%, #241011 100%);
+  --accent-2: #8a8789;
+  --accent-3: #4fbf7f; /* green "available" dot */
+  --danger: #f08a8a;
+  --success: #6fd6a0;
+  --success-bg: rgb(79 191 127 / 0.14);
+  --glow-1: rgb(160 30 36 / 0.18); /* hero background glows, kept faint */
+  --glow-2: rgb(86 17 19 / 0.22);
+  --glass: rgb(14 14 14 / 0.78);
+  --shadow: 0 24px 60px -28px rgb(0 0 0 / 0.9);
+  --grain-opacity: 0.05;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #f4f2f2;
+  --bg-2: #ebe7e7;
+  --surface: #ffffff;
+  --line: rgb(8 8 8 / 0.1);
+  --text: #0c0c0c;
+  --text-dim: #575354; /* AA on --bg */
+  --accent: #8f1d22; /* white text on it is 9:1 */
+  --accent-hover: #a2262b;
+  --accent-text: #8f1d22;
+  --accent-display: #9a2328;
+  --accent-soft: rgb(143 29 34 / 0.06);
+  --accent-line: rgb(143 29 34 / 0.25);
+  --accent-ink: #ffffff;
+  --accent-fill: linear-gradient(150deg, #e9c9c9 0%, #dcb1b2 100%);
+  --accent-2: #7a7577;
+  --accent-3: #1f8a4c;
+  --danger: #b42318;
+  --success: #1f7a45;
+  --success-bg: rgb(31 138 76 / 0.12);
+  --glow-1: rgb(182 15 23 / 0.07);
+  --glow-2: rgb(141 15 20 / 0.05);
+  --glass: rgb(255 255 255 / 0.75);
+  --shadow: 0 24px 60px -30px rgb(86 17 19 / 0.25);
+  --grain-opacity: 0.03;
+  color-scheme: light;
+}
+
+:root {
+  --font-display: 'Alexandria Variable', 'Alexandria', system-ui, sans-serif;
+  --font-body: 'Alexandria Variable', 'Alexandria', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1360px;
+  --radius: 18px;
+  --radius-sm: 10px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --section-y: clamp(56px, 6.5vw, 96px);
+}

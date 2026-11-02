@@ -1,0 +1,89 @@
+.heading {
+  margin: 14px 0 clamp(28px, 4vw, 56px);
+  font-size: clamp(2rem, 4.8vw, 4.4rem);
+  max-width: 14ch;
+}
+.list {
+  display: grid;
+  gap: 12px;
+}
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  overflow: hidden;
+  transition: background-color 0.5s var(--ease), color 0.5s var(--ease), border-color 0.5s;
+}
+.active {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+}
+.active .num {
+  color: var(--accent-text);
+  opacity: 1;
+}
+.head {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 36px);
+  width: 100%;
+  padding: clamp(20px, 3vw, 34px);
+  text-align: left;
+}
+.num {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+}
+.title {
+  flex: 1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3.4vw, 2.8rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.plus {
+  flex-shrink: 0;
+  transition: transform 0.5s var(--ease);
+}
+.active .plus {
+  transform: rotate(135deg);
+}
+.bodyWrap {
+  overflow: hidden;
+}
+.body {
+  display: grid;
+  gap: 22px;
+  padding: 0 clamp(20px, 3vw, 34px) clamp(24px, 3vw, 36px);
+  padding-left: clamp(20px, calc(3vw + 70px), 106px);
+}
+.blurb {
+  max-width: 56ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+}
+.chips,
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chips li {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+.tools li > span {
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .body {
+    padding-left: clamp(20px, 3vw, 34px);
+  }
+  .num {
+    display: none;
+  }
+}

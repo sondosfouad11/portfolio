@@ -1,0 +1,87 @@
+.work {
+  position: relative;
+  padding-block: var(--section-y) clamp(40px, 6vw, 80px);
+}
+.pin {
+  display: grid;
+  /* minmax(0, 1fr) stops the wide card track from stretching the column and pushing the heading sideways */
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-content: center;
+}
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+.title {
+  margin-top: 14px;
+  font-size: clamp(2rem, 4.8vw, 4.4rem);
+}
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--glass);
+}
+.tabs button {
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  transition: background-color 0.3s, color 0.3s;
+}
+.tabs button:hover {
+  color: var(--text);
+}
+.tabs .tabOn {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Default (phones, reduced motion): swipeable snap row */
+.track {
+  display: flex;
+  gap: clamp(18px, 2.4vw, 36px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 10px var(--gutter) 24px;
+  scroll-padding-inline: var(--gutter);
+  scrollbar-width: thin;
+}
+.track > li {
+  scroll-snap-align: start;
+}
+
+/* Desktop: GSAP pins the section and moves the track */
+.pinned {
+  min-height: 100svh;
+  padding-block: 96px 32px;
+  /* top-aligned (not centered) so no empty band appears above the heading */
+  align-content: start;
+  overflow: hidden;
+}
+/* The pinned block already fills the screen and clears the nav, so the usual section gap above it
+   would only add an empty band. */
+.work:has(.pinned) {
+  padding-top: 0;
+}
+.pinned .track {
+  overflow: visible;
+  scroll-snap-type: none;
+  width: max-content;
+  will-change: transform;
+}
+.pinned .track > li {
+  opacity: 0.45;
+  scale: 0.92;
+}
+.pinned .track > li.focus {
+  opacity: 1;
+  scale: 1;
+}

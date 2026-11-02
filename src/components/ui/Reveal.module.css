@@ -1,0 +1,17 @@
+.mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* room for descenders and the serif italic overhang */
+  padding: 0.08em 0.06em 0.12em;
+  margin: -0.08em -0.06em -0.12em;
+}
+.word {
+  display: inline-block;
+}
+/* Punctuation after a serif accent word goes back to the heading font */
+.tail {
+  font-family: var(--font-display);
+  font-style: normal;
+  color: var(--text);
+}

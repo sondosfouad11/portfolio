@@ -1,0 +1,31 @@
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Shown until a real cover image is added: big initials on the accent color */
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 10px;
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  text-align: center;
+  padding: 24px;
+}
+.placeholder span {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+.placeholder small {
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}

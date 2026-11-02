@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Sondos Lasheen — Full-Stack Developer &amp; UI/UX Designer</title>
+    <meta
+      name="description"
+      content="Sondos Lasheen is a full-stack software engineer (React &amp; Laravel) and UI/UX and graphic designer based in Cairo, Egypt. See her work and get in touch."
+    />
+    <meta name="theme-color" content="#080808" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://sondoslasheen.vercel.app/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Sondos Lasheen — Full-Stack Developer &amp; UI/UX Designer" />
+    <meta
+      property="og:description"
+      content="I build and design digital experiences. React, Laravel, UI/UX and brand design."
+    />
+    <meta property="og:image" content="https://sondoslasheen.vercel.app/og-image.png" />
+    <meta property="og:url" content="https://sondoslasheen.vercel.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Sondos Lasheen — Full-Stack Developer &amp; UI/UX Designer" />
+    <meta name="twitter:image" content="https://sondoslasheen.vercel.app/og-image.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sondos Fouad Lasheen",
+        "jobTitle": "Full-Stack Software Engineer and UI/UX Designer",
+        "email": "mailto:sondoslasheen@gmail.com",
+        "address": { "@type": "PostalAddress", "addressLocality": "Cairo", "addressCountry": "EG" },
+        "sameAs": [
+          "https://linkedin.com/in/sondoslasheen",
+          "https://github.com/sondosfouad11",
+          "https://behance.net/sondoslasheen"
+        ]
+      }
+    </script>
+    <style>
+      /* Shown by the HTML itself while the app downloads: right background + the name, no white flash */
+      html{background:#080808}
+      html[data-theme="light"]{background:#f4f2f2}
+      body{margin:0}
+      .boot{min-height:100svh;display:grid;place-items:center;font:800 clamp(2rem,8vw,5.5rem)/1 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.03em;color:#e6e4e7}
+      html[data-theme="light"] .boot{color:#0c0c0c}
+    </style>
+    <script>
+      // Apply the saved theme before first paint to avoid a flash.
+      try {
+        var t = localStorage.getItem('theme-v2')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"><div class="boot" aria-hidden="true">Sondos Lasheen</div></div>
+    <noscript>
+      <p style="font-family:system-ui,sans-serif;padding:24px;color:#f4f4f4;background:#0e0e0e">
+        This site needs JavaScript. You can reach Sondos at sondoslasheen@gmail.com.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+.wrap {
+  position: fixed;
+  top: calc(14px + env(safe-area-inset-top));
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  padding-inline: 12px;
+  pointer-events: none;
+}
+.pill {
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 6px 6px 18px;
+  width: min(880px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--glass);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  transition: width 0.5s var(--ease), box-shadow 0.4s var(--ease);
+}
+.scrolled .pill {
+  width: min(560px, 100%);
+  box-shadow: var(--shadow);
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin-right: auto;
+}
+.logo span {
+  color: var(--accent-text);
+}
+.links {
+  display: flex;
+  gap: 2px;
+}
+.links button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  color: var(--text-dim);
+  transition: color 0.25s;
+}
+.links button:hover {
+  color: var(--text);
+}
+.links button:hover .u-draw::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+.icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: background-color 0.25s;
+}
+.icon:hover {
+  background: var(--line);
+}
+.cta {
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+.cta:hover {
+  background: var(--accent-hover);
+}
+.burger {
+  display: none;
+}
+
+/* Mobile menu: a full-height sheet that slides down from the top */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: calc(14px + env(safe-area-inset-top)) var(--gutter) max(24px, env(safe-area-inset-bottom));
+  overflow-y: auto;
+}
+.sheetTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 56px;
+  padding-left: 6px;
+}
+.sheetTop .logo {
+  margin-right: 0;
+}
+.close {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.mobileLinks {
+  margin-top: clamp(24px, 6vh, 56px);
+  border-top: 1px solid var(--line);
+}
+.mobileLinks li {
+  border-bottom: 1px solid var(--line);
+}
+.mobileLinks button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: clamp(14px, 2.4vh, 22px) 4px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 9vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+.mobileLinks button span {
+  flex: 1;
+}
+.mobileLinks button svg {
+  color: var(--text-dim);
+  transition: transform 0.3s var(--ease), color 0.3s;
+}
+.mobileLinks button:active svg,
+.mobileLinks button:hover svg {
+  color: var(--accent-text);
+  transform: translate(3px, -3px);
+}
+.mobileLinks small {
+  min-width: 2ch;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  letter-spacing: 0.08em;
+}
+.sheetBottom {
+  margin-top: auto;
+  padding-top: 32px;
+  display: grid;
+  gap: 18px;
+}
+.mail {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+.sheetRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.socials {
+  display: flex;
+  gap: 8px;
+}
+.socials a {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+.mobileTheme {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .links,
+  .cta {
+    display: none;
+  }
+  .burger {
+    display: grid;
+  }
+  .scrolled .pill {
+    width: 100%;
+  }
+}
